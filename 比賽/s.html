@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>比賽即時比分板</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .score { font-size: 2em; margin: 20px; }
+        .table-info { font-size: 1.5em; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>比賽即時比分板</h1>
+    <div class="table-info" id="table-info">第1桌: 球隊A vs 球隊B</div>
+    <div class="score" id="score">當前比分: 0 - 0</div>
+    <button onclick="updateScore()">更新比分</button>
+    <script>
+        function updateScore() {
+            const newScore = prompt("請輸入新的比分 (格式: X - Y):");
+            if (newScore) {
+                document.getElementById('score').innerText = `當前比分: ${newScore}`;
+            }
+            const newTableInfo = prompt("請輸入新的桌號和球隊 (格式: 桌號: 球隊A vs 球隊B):");
+            if (newTableInfo) {
+                document.getElementById('table-info').innerText = newTableInfo;
+            }
+        }
+    </script>
+</body>
+</html>
